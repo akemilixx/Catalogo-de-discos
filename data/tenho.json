@@ -34,7 +34,6 @@
   "artista": "Muse",
   "estilo": "Rock alternativo",
   "album": "The WOW! Signal",
-  "foto": "",
   "lados": [
    {
     "lado": "Lado A",
@@ -57,7 +56,8 @@
     ]
    }
   ],
-  "valorPago": ""
+  "valorPago": 21737,
+  "foto": "img/t-muse-the-wow-signal-mwsjuwvm.jpg"
  },
  {
   "id": "t003-muse-the-resistance",
