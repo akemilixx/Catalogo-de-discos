@@ -238,7 +238,6 @@
   "artista": "Shirō Sagisu",
   "estilo": "Trilha sonora, música orquestral, ambient e música eletrônica",
   "album": "Neon Genesis Evangelion: The Original Series Soundtrack",
-  "foto": "",
   "lados": [
    {
     "lado": "Lado A",
@@ -283,7 +282,8 @@
     ]
    }
   ],
-  "valorPago": ""
+  "valorPago": 265.3,
+  "foto": "img/t-shiro-sagisu-neon-genesis-evangelion-the-mwsk5v0y.jpg"
  },
  {
   "id": "t009-queen-news-of-the-world",
