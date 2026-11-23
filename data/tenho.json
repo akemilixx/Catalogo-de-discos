@@ -4,7 +4,6 @@
   "artista": "Muse",
   "estilo": "Rock alternativo",
   "album": "Will of the People",
-  "foto": "",
   "lados": [
    {
     "lado": "Lado A",
@@ -27,7 +26,8 @@
     ]
    }
   ],
-  "valorPago": "Presente"
+  "valorPago": "Presente - Karen ♡",
+  "foto": "img/t-muse-will-of-the-people-mwsjp1kk.jpg"
  },
  {
   "id": "t002-muse-the-wow-signal",
