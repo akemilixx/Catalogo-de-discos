@@ -290,7 +290,6 @@
   "artista": "Queen",
   "estilo": "Rock, hard rock e arena rock",
   "album": "News of the World",
-  "foto": "",
   "lados": [
    {
     "lado": "Lado A",
@@ -314,7 +313,8 @@
     ]
    }
   ],
-  "valorPago": ""
+  "valorPago": 100,
+  "foto": "img/t-queen-news-of-the-world-mwsk6zok.jpg"
  },
  {
   "id": "t010-pink-floyd-the-dark-side-of-the-moon",
