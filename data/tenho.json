@@ -64,7 +64,6 @@
   "artista": "Muse",
   "estilo": "Rock alternativo",
   "album": "The Resistance",
-  "foto": "",
   "lados": [
    {
     "lado": "Lado A",
@@ -98,7 +97,8 @@
     ]
    }
   ],
-  "valorPago": ""
+  "valorPago": 21813,
+  "foto": "img/t-muse-the-resistance-mwsjyu8x.jpg"
  },
  {
   "id": "t004-queen-greatest-hits-ii",
