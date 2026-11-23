@@ -37,6 +37,23 @@ Para trocar a senha (ou quando o token vencer), repita o passo 2.
 
 **Quem cadastra:** abre o site, clica em **Entrar**, digita a senha. O navegador lembra até clicar em **Sair**.
 
+## Segurança: o que saber
+
+- **A senha dá acesso ao token.** Quem entra com a senha fica com o token do GitHub guardado no navegador e
+  consegue copiá-lo. Passe a senha só para quem você confia.
+- **Trocar só a senha não corta o acesso de ninguém.** As versões antigas de `data/acesso.json` continuam no
+  histórico do git, e a senha antiga ainda abre o mesmo token. Para cortar o acesso de alguém:
+  1. Revogue o token em <https://github.com/settings/personal-access-tokens> (**Revoke**).
+  2. Crie um token novo (passos acima).
+  3. No site: **Entrar → Definir senha** com o token novo e uma senha nova.
+  4. Passe a senha nova só para quem ainda deve cadastrar.
+- **Use uma senha forte**, como uma frase com 4 ou 5 palavras aleatórias. O arquivo cifrado é público, então
+  qualquer pessoa pode tentar adivinhar a senha no próprio computador.
+- **Dê ao token uma validade curta** (por exemplo, 90 dias) e só a permissão *Contents* deste repositório.
+  O token também pode alterar o código do site. De vez em quando, olhe os commits e veja se aparece alguma
+  mudança fora de `data/` e `img/` que você não fez.
+- **Tudo no repositório é público:** a coleção, os valores pagos e o e-mail de quem fez os commits.
+
 Depois de salvar, o site publicado leva cerca de 1 minuto para mostrar a mudança
 para quem está só visitando; quem entrou com a senha já vê na hora.
 

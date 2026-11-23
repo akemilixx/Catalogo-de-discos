@@ -1,5 +1,5 @@
 import { iniciarCadastro, sugestoes } from './cadastro.js';
-import { fmtData, lerPreco, linkGoogleImagens } from './app.js';
+import { fmtData, lerPreco, linkGoogleImagens, linkSeguro } from './app.js';
 
 const hoje = () => new Date().toLocaleDateString('sv-SE'); // AAAA-MM-DD no fuso local
 const precoParaCampo = (v) => (typeof v === 'number'
@@ -32,7 +32,7 @@ const est = await iniciarCadastro({
       lojas: f.lojas.value.trim(),
       preco: lerPreco(f.preco.value),
       atualizacao: f.atualizacao.value || hoje(),
-      linkImagens: f.linkImagens.value.trim() || linkGoogleImagens(artista, album),
+      linkImagens: linkSeguro(f.linkImagens.value) || linkGoogleImagens(artista, album),
     };
   },
   resumo: (q) => ({
