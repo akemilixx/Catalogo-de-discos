@@ -1,4 +1,4 @@
-import { montarCabecalho, temToken, carregar, esc, fmtPreco, fmtData, htmlCapa, chave, normal, toast } from './app.js';
+import { montarCabecalho, temToken, carregar, esc, fmtPreco, fmtData, htmlCapa, chave, normal, toast, linkSeguro } from './app.js';
 
 montarCabecalho('colecao');
 
@@ -78,7 +78,7 @@ function abrir(x) {
       linha('Álbum', esc(r.album)) + linha('Lançamento do vinil', esc(r.lancamento)) +
       linha('Nacionalidade', esc(r.nacionalidade)) + linha('Lojas', esc(r.lojas)) +
       linha('Preço', esc(fmtPreco(r.preco))) + linha('Data última atualização', esc(fmtData(r.atualizacao))) +
-      linha('Link Google Images', r.linkImagens ? `<a href="${esc(r.linkImagens)}" target="_blank" rel="noopener">abrir busca</a>` : '');
+      linha('Link Google Images', linkSeguro(r.linkImagens) ? `<a href="${esc(linkSeguro(r.linkImagens))}" target="_blank" rel="noopener">abrir busca</a>` : '');
   }
   const d = $('#dlg');
   d.innerHTML = `<div style="position:relative">

@@ -183,6 +183,9 @@ export const novoId = (prefixo, artista, album) => `${prefixo}${Date.now().toStr
 
 export const chave = (artista, album) => slug(`${artista}`) + '|' + slug(String(album).replace(/\(.*?\)|\[.*?\]/g, ''));
 
+/** Devolve o link só se for http(s); qualquer outro (ex.: javascript:) vira ''. */
+export const linkSeguro = (u) => (/^https?:\/\//i.test(String(u ?? '').trim()) ? String(u).trim() : '');
+
 export const linkGoogleImagens = (artista, album) =>
   `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(`${artista} ${album} vinyl cover`)}`;
 
