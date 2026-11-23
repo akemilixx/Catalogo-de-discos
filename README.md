@@ -5,7 +5,7 @@ Os dados vieram das planilhas `Vinis_que_tenho.xlsx` e `Vinis_que_quero.xlsx`.
 
 | Página | O que faz |
 |---|---|
-| `index.html` – **Coleção** | Mostra os dois juntos (abas Todos / Tenho / Quero), com busca (inclusive por música), filtro por gênero e ordenação. Clique num disco para ver todos os detalhes. |
+| `index.html` – **Coleção** | Mostra os dois juntos (abas Todos / Tenho / Quero), com busca (inclusive por música), filtro por gênero e ordenação. Clique num disco para ver todos os detalhes. O botão **Exportar XLSX** baixa uma planilha do Excel, escolhendo listas, busca, gêneros, faixa de ano e de preço, ordem e colunas extras (músicas, link da capa). |
 | `tenho.html` – **Cadastrar Tenho** | Cadastrar, editar e excluir discos que você tem: Cantor/banda, Estilo musical, Nome do álbum, Fotos, Lados com as Músicas, Valor pago. |
 | `quero.html` – **Cadastrar Quero** | Cadastrar, editar e excluir discos que você quer: Núm., Artista/banda, Gênero, Álbum, Capa, Lançamento do vinil, Nacionalidade, Lojas, Preço, Data última atualização, Link Google Images. O botão **Comprei!** passa o disco para a lista Tenho. |
 

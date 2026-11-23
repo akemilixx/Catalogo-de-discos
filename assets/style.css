@@ -185,3 +185,14 @@ details summary { cursor: pointer; font-size: .9rem; color: var(--acento); }
 .toast.ok { background: #166534; }
 .toast.erro { background: #b91c1c; }
 [hidden] { display: none !important; }
+
+/* Exportar XLSX */
+.exportar fieldset { border: 1px solid var(--borda); border-radius: 10px; padding: 8px 12px 10px; margin: 0; min-width: 0; }
+.exportar legend { font-size: .85rem; font-weight: 600; color: var(--txt-2); padding: 0 4px; display: flex; align-items: center; gap: 4px; }
+.exportar .opcoes { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.exportar .opcoes.col { flex-direction: column; }
+.exportar .opcoes.generos { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); max-height: 168px; overflow-y: auto; gap: 2px 12px; }
+.exportar label.op { flex-direction: row; align-items: center; gap: 8px; font-weight: 400; color: var(--txt); font-size: .9rem; }
+.exportar label.op input { width: auto; margin: 0; accent-color: var(--acento); }
+.exportar .mini-bt { padding: 1px 8px; font-size: .78rem; font-weight: 500; border-radius: 999px; }
+.exportar .resultado { font-weight: 600; }

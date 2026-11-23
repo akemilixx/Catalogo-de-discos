@@ -1,3 +1,4 @@
+import { abrirExportar } from './exportar.js';
 import { montarCabecalho, temToken, carregar, esc, fmtPreco, fmtData, htmlCapa, chave, normal, toast, linkSeguro } from './app.js';
 
 montarCabecalho('colecao');
@@ -22,23 +23,23 @@ function normalizar(tenho, quero) {
 
 const sem = normal;
 
+const txt = (v) => String(v ?? '').toLocaleLowerCase('pt-BR');
+const COMPARAR = {
+  artista: (a, b) => txt(a.artista).localeCompare(txt(b.artista), 'pt-BR') || txt(a.album).localeCompare(txt(b.album), 'pt-BR'),
+  album: (a, b) => txt(a.album).localeCompare(txt(b.album), 'pt-BR'),
+  ano: (a, b) => (Number(b.ano) || 0) - (Number(a.ano) || 0),
+  preco: (a, b) => (typeof b.preco === 'number' ? b.preco : -1) - (typeof a.preco === 'number' ? a.preco : -1),
+  recente: (a, b) => b.ordem - a.ordem,
+};
+
 function render() {
   const termo = sem($('#busca').value);
   const gen = $('#genero').value;
-  const ordem = $('#ordem').value;
   let lista = estado.itens.filter((x) =>
     (estado.aba === 'todos' || x.tipo === estado.aba) &&
     (!gen || x.genero === gen) &&
     (!termo || sem(x.busca).includes(termo)));
-  const txt = (v) => String(v ?? '').toLocaleLowerCase('pt-BR');
-  const cmp = {
-    artista: (a, b) => txt(a.artista).localeCompare(txt(b.artista), 'pt-BR') || txt(a.album).localeCompare(txt(b.album), 'pt-BR'),
-    album: (a, b) => txt(a.album).localeCompare(txt(b.album), 'pt-BR'),
-    ano: (a, b) => (Number(b.ano) || 0) - (Number(a.ano) || 0),
-    preco: (a, b) => (typeof b.preco === 'number' ? b.preco : -1) - (typeof a.preco === 'number' ? a.preco : -1),
-    recente: (a, b) => b.ordem - a.ordem,
-  }[ordem];
-  lista = [...lista].sort(cmp);
+  lista = [...lista].sort(COMPARAR[$('#ordem').value]);
 
   const nums = lista.filter((x) => x.tipo === 'quero' && typeof x.preco === 'number');
   const total = nums.reduce((s, x) => s + x.preco, 0);
@@ -105,6 +106,14 @@ document.querySelectorAll('.abas button').forEach((b) => b.addEventListener('cli
   render();
 }));
 ['#busca', '#genero', '#ordem'].forEach((s) => $(s).addEventListener('input', render));
+$('#exportar').addEventListener('click', () => abrirExportar({
+  itens: estado.itens,
+  aba: estado.aba,
+  busca: $('#busca').value,
+  genero: $('#genero').value,
+  ordem: $('#ordem').value,
+  comparar: COMPARAR,
+}));
 $('#grade').addEventListener('click', (e) => {
   const c = e.target.closest('.card');
   if (c) abrir(estado.itens[c.dataset.i]);
