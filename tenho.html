@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastrar Tenho</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main>
+    <h1>Cadastrar vinil que tenho</h1>
+    <p class="sub">Sua coleção: os discos que já estão na estante.</p>
+    <div class="layout-cad">
+      <form id="form" class="form painel" autocomplete="off">
+        <h2 id="titulo-form">Novo disco</h2>
+        <div class="linha">
+          <label>Cantor/banda<input name="artista" list="dl-artistas" required></label>
+          <label>Estilo musical<input name="estilo" list="dl-generos"></label>
+        </div>
+        <label>Nome do álbum<input name="album" required></label>
+        <div>
+          <label style="margin-bottom:4px">Fotos</label>
+          <div class="foto-campo">
+            <div class="prev" id="foto-prev"></div>
+            <div class="ops">
+              <input type="file" id="foto-arquivo" accept="image/*">
+              <input type="url" id="foto-url" placeholder="…ou cole o link de uma imagem">
+              <span class="ajuda">Dica: copie uma imagem e cole aqui com Ctrl+V.</span>
+              <div class="acoes" style="justify-content:flex-start">
+                <button type="button" id="foto-google">Buscar no Google Imagens</button>
+                <button type="button" id="foto-remover">Remover</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <label>Valor pago <small>(número ou texto, ex.: Presente)</small><input name="valorPago" list="dl-valores" placeholder="150,00"></label>
+        <div>
+          <label style="margin-bottom:6px">Lados e músicas <small>(uma música por linha)</small></label>
+          <div id="lados" class="form" style="gap:8px"></div>
+          <button type="button" id="add-lado" style="margin-top:8px">+ Adicionar lado</button>
+        </div>
+        <div class="acoes">
+          <button type="button" id="cancelar" hidden>Cancelar</button>
+          <button type="submit" class="pri">Salvar</button>
+        </div>
+      </form>
+
+      <section>
+        <div class="barra">
+          <h2 style="margin:0">Tenho <span id="total"></span></h2>
+          <input type="search" id="filtro" placeholder="Filtrar…" style="flex:1 1 180px">
+        </div>
+        <div class="lista" id="lista"></div>
+      </section>
+    </div>
+  </main>
+  <datalist id="dl-artistas"></datalist><datalist id="dl-generos"></datalist>
+  <datalist id="dl-valores"><option value="Presente"></datalist>
+  <script type="module" src="assets/tenho.js"></script>
+</body>
+</html>

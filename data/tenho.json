@@ -1,0 +1,883 @@
+[
+ {
+  "id": "t001-muse-will-of-the-people",
+  "artista": "Muse",
+  "estilo": "Rock alternativo",
+  "album": "Will of the People",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Will of the People",
+     "Compliance",
+     "Liberation",
+     "Won't Stand Down",
+     "Ghosts (How Can I Move On)"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "You Make Me Feel Like It's Halloween",
+     "Kill or Be Killed",
+     "Verona",
+     "Euphoria",
+     "We Are Fucking Fucked"
+    ]
+   }
+  ],
+  "valorPago": "Presente"
+ },
+ {
+  "id": "t002-muse-the-wow-signal",
+  "artista": "Muse",
+  "estilo": "Rock alternativo",
+  "album": "The WOW! Signal",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "The Dark Forest",
+     "Nightshift Superstar",
+     "Shimmering Scars",
+     "Cryogen",
+     "Be With You"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Hexagons",
+     "The Sickness In You & I",
+     "Unravelling",
+     "Hush",
+     "Space Debris"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t003-muse-the-resistance",
+  "artista": "Muse",
+  "estilo": "Rock alternativo",
+  "album": "The Resistance",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Uprising",
+     "Resistance",
+     "Undisclosed Desires"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "United States of Eurasia (+Collateral Damage)",
+     "Guiding Light"
+    ]
+   },
+   {
+    "lado": "Lado C",
+    "musicas": [
+     "Unnatural Selection",
+     "MK Ultra",
+     "I Belong to You (+Mon Cœur S'ouvre à ta Voix)"
+    ]
+   },
+   {
+    "lado": "Lado D",
+    "musicas": [
+     "Exogenesis: Symphony Part 1 (Overture)",
+     "Exogenesis: Symphony Part 2 (Cross-Pollination)",
+     "Exogenesis: Symphony Part 3 (Redemption)"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t004-queen-greatest-hits-ii",
+  "artista": "Queen",
+  "estilo": "Rock",
+  "album": "Greatest Hits II",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "A Kind of Magic",
+     "Under Pressure",
+     "Radio Ga Ga",
+     "I Want It All",
+     "I Want to Break Free"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Innuendo",
+     "It's a Hard Life",
+     "Breakthru",
+     "Who Wants to Live Forever"
+    ]
+   },
+   {
+    "lado": "Lado C",
+    "musicas": [
+     "Headlong",
+     "The Miracle",
+     "I'm Going Slightly Mad",
+     "The Invisible Man"
+    ]
+   },
+   {
+    "lado": "Lado D",
+    "musicas": [
+     "Hammer to Fall",
+     "Friends Will Be Friends",
+     "The Show Must Go On",
+     "One Vision"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t005-the-rolling-stones-some-girls-single-miss-you",
+  "artista": "The Rolling Stones",
+  "estilo": "Rock",
+  "album": "Some Girls (Single – Miss You)",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Miss You (Special Disco Version)"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Far Away Ey"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t006-gorillaz-cracker-island",
+  "artista": "Gorillaz",
+  "estilo": "Misto",
+  "album": "Cracker Island",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Cracker Island (feat. Thundercat)",
+     "Oil (feat. Stevie Nicks)",
+     "The Tired Influencer",
+     "Tarantula",
+     "Silent Running (feat. Adeleye Omotayo)"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "New Gold (feat. Tame Impala & Bootie Brown)",
+     "Baby Queen",
+     "Tormenta (feat. Bad Bunny)",
+     "Skinny Ape",
+     "Possession Island (feat. Beck)"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t007-mitski-be-the-cowboy",
+  "artista": "Mitski",
+  "estilo": "Indie rock, art pop, indie pop",
+  "album": "Be the Cowboy",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Geyser",
+     "Why Didn't You Stop Me?",
+     "Old Friend",
+     "A Pearl",
+     "Lonesome Love",
+     "Remember My Name",
+     "Me and My Husband"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Come into the Water",
+     "Nobody",
+     "Pink in the Night",
+     "A Horse Named Cold Air",
+     "Washing Machine Heart",
+     "Blue Light",
+     "Two Slow Dancers"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t008-shiro-sagisu-neon-genesis-evangelion-the-original-",
+  "artista": "Shirō Sagisu",
+  "estilo": "Trilha sonora, música orquestral, ambient e música eletrônica",
+  "album": "Neon Genesis Evangelion: The Original Series Soundtrack",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "A Cruel Angel's Thesis (Director's Edit Version)",
+     "ANGEL ATTACK",
+     "Rei I",
+     "Hedgehog's Dilemma",
+     "BAREFOOT IN THE PARK"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "RITSUKO",
+     "MISATO",
+     "ASUKA STRIKES!",
+     "NERV",
+     "TOKYO-3"
+    ]
+   },
+   {
+    "lado": "Lado C",
+    "musicas": [
+     "I. SHINJI",
+     "EVA-01",
+     "A STEP FORWARD INTO TERROR",
+     "EVA-02",
+     "DECISIVE BATTLE",
+     "EVA-00"
+    ]
+   },
+   {
+    "lado": "Lado D",
+    "musicas": [
+     "THE BEAST",
+     "MARKING TIME, WAITING FOR DEATH",
+     "Rei II",
+     "FLY ME TO THE MOON (Instrumental Version)",
+     "Next Episode",
+     "FLY ME TO THE MOON (YOKO TAKAHASHI Acid Bossa Version)"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t009-queen-news-of-the-world",
+  "artista": "Queen",
+  "estilo": "Rock, hard rock e arena rock",
+  "album": "News of the World",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "We Will Rock You",
+     "We Are the Champions",
+     "Sheer Heart Attack",
+     "All Dead, All Dead",
+     "Spread Your Wings",
+     "Fight from the Inside"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Get Down, Make Love",
+     "Sleeping on the Sidewalk",
+     "Who Needs You",
+     "It's Late",
+     "My Melancholy Blues"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t010-pink-floyd-the-dark-side-of-the-moon",
+  "artista": "Pink Floyd",
+  "estilo": "Rock progressivo, rock psicodélico e art rock",
+  "album": "The Dark Side of the Moon",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Speak to Me",
+     "Breathe (In the Air)",
+     "On the Run",
+     "Time",
+     "The Great Gig in the Sky"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Money",
+     "Us and Them",
+     "Any Colour You Like",
+     "Brain Damage",
+     "Eclipse"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t011-elis-regina-fascinacao",
+  "artista": "Elis Regina",
+  "estilo": "MPB e rock",
+  "album": "Fascinação",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Como Nossos Pais",
+     "Velha Roupa Colorida",
+     "Los Hermanos",
+     "Um Por Todos",
+     "Fascinação"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Jardins de Infância",
+     "Quero",
+     "Gracias a la Vida",
+     "O Cavaleiro e os Moinhos",
+     "Tatuagem"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t012-elis-regina-elis-1972",
+  "artista": "Elis Regina",
+  "estilo": "MPB",
+  "album": "Elis (1972)",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "20 Anos Blue",
+     "Bala com Bala",
+     "Nada Será Como Antes",
+     "Mucuripe",
+     "Olhos Abertos",
+     "Vida de Bailarina"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Águas de Março",
+     "Atrás da Porta",
+     "Cais",
+     "Me Deixa em Paz",
+     "Casa no Campo",
+     "Boa Noite, Amor"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t013-elis-regina-transversal-do-tempo",
+  "artista": "Elis Regina",
+  "estilo": "MPB e rock",
+  "album": "Transversal do Tempo",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Fascinação",
+     "Sinal Fechado",
+     "Deus Lhe Pague",
+     "O Rancho da Goiabada / Construção",
+     "Saudosa Maloca"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Boto",
+     "Cão Sem Dono",
+     "Meio Termo / Corpos",
+     "Querelas do Brasil",
+     "Cartomante"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t014-elis-regina-elis-1974",
+  "artista": "Elis Regina",
+  "estilo": "MPB, bossa nova e samba",
+  "album": "Elis (1974)",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Na Batucada da Vida",
+     "Travessia",
+     "Conversando no Bar",
+     "Ponta de Areia",
+     "O Mestre-Sala dos Mares"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Amor Até o Fim",
+     "Dois Pra Lá, Dois Pra Cá",
+     "Maria Rosa",
+     "Caça à Raposa",
+     "O Compositor Me Disse"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t015-elis-regina-transversal-do-tempo",
+  "artista": "Elis Regina",
+  "estilo": "MPB, samba",
+  "album": "Transversal do Tempo",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Fascinação",
+     "Sinal Fechado",
+     "Deus Lhe Pague",
+     "O Rancho da Goiabada / Construção",
+     "Saudosa Maloca"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Boto",
+     "Cão Sem Dono",
+     "Meio Termo / Corpos",
+     "Querelas do Brasil",
+     "Cartomante"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t016-elis-regina-elis-1977",
+  "artista": "Elis Regina",
+  "estilo": "MPB",
+  "album": "Elis (1977)",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Caxangá",
+     "Colagem",
+     "Vecchio Novo",
+     "Morro Velho",
+     "Qualquer Dia"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Romaria",
+     "A Dama do Apocalipse",
+     "Cartomante",
+     "Sentimental Eu Fico",
+     "Transversal do Tempo"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t017-elis-regina-nada-sera-como-antes-elis-interpreta-m",
+  "artista": "Elis Regina",
+  "estilo": "MPB, samba",
+  "album": "Nada Será Como Antes – Elis Interpreta Milton Nascimento",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Nada Será Como Antes",
+     "Morro Velho",
+     "Cais",
+     "Credo",
+     "Conversando no Bar"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Travessia",
+     "Caxangá",
+     "Vera Cruz",
+     "Canção do Sal",
+     "Ponta de Areia"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t018-roberto-carlos-e-proibido-fumar",
+  "artista": "Roberto Carlos",
+  "estilo": "Jovem Guarda, rock e rockabilly",
+  "album": "É Proibido Fumar",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "É Proibido Fumar",
+     "Um Leão Está Solto nas Ruas",
+     "Rosinha",
+     "Brôto do Jacaré",
+     "Jura-me",
+     "Meu Grande Bem"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "O Calhambeque",
+     "Minha História de Amor",
+     "Nasci para Chorar",
+     "Amapola",
+     "Louco Não Estou Mais",
+     "Desamarre o Meu Coração"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t019-reginaldo-rossi-a-volta",
+  "artista": "Reginaldo Rossi",
+  "estilo": "Brega, música romântica e Jovem Guarda",
+  "album": "A Volta",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Volta",
+     "Amor, Amor, Amor",
+     "Mulher",
+     "Recife (San Francisco)",
+     "A Porta",
+     "Prisioneiro do Rock"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Doce Pecado",
+     "A Idade do Lobo",
+     "Uma Tentação",
+     "Tenho Que Voltar",
+     "Felicidade",
+     "De Hoje em Diante",
+     "Sai de Mim"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t020-legiao-urbana-que-pais-e-este",
+  "artista": "Legião Urbana",
+  "estilo": "Rock brasileiro, punk rock e rock alternativo",
+  "album": "Que País É Este",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Que País É Este",
+     "Conexão Amazônica",
+     "Tédio (Com Um T Bem Grande Pra Você)",
+     "Depois do Começo",
+     "Química"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Eu Sei",
+     "Faroeste Caboclo",
+     "Angra dos Reis",
+     "Mais do Mesmo"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t021-demonios-da-garoa-trem-das-onze",
+  "artista": "Demônios da Garoa",
+  "estilo": "Samba paulista e samba de raiz",
+  "album": "Trem das Onze",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Trem das Onze",
+     "Chum-Chim-Chum",
+     "Saudosa Maloca",
+     "Iracema",
+     "Prova de Carinho",
+     "Abrigo de Vagabundos"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Lenço na Molera",
+     "As Mariposas",
+     "Conselho de Mulher",
+     "Samba do Arnesto",
+     "Barracão Pegou Fogo",
+     "A Promessa de Jacó"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t022-luiz-gonzaga-um-novo-espaco-para-a-musica-linha-3",
+  "artista": "Luiz Gonzaga",
+  "estilo": "Baião, forró e música nordestina",
+  "album": "Um Novo Espaço Para a Música – Linha 3",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Apologia ao Jumento (O Jumento É Nosso Irmão)",
+     "Assum Preto",
+     "Paraíba",
+     "Asa Branca",
+     "Boiadeiro",
+     "Qui Nem Jiló",
+     "A Triste Partida"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Karolina com K",
+     "Paulo Afonso",
+     "Mangaratiba",
+     "Capim Novo",
+     "Feira de Caruaru",
+     "ABC do Sertão",
+     "Serrote Agudo",
+     "Juazeiro",
+     "Baião"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t023-chitaozinho-xororo-cowboy-do-asfalto",
+  "artista": "Chitãozinho & Xororó",
+  "estilo": "Sertanejo e country",
+  "album": "Cowboy do Asfalto",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Evidências",
+     "Natureza, Espelho de Deus",
+     "É Assim Que Te Amo (The Air That I Breathe)",
+     "Tô Deixando Você",
+     "Bom Dia"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Nuvem de Lágrimas",
+     "Cowboy do Asfalto",
+     "Meus Direitos",
+     "Gente Humilde",
+     "Sem Estória, Sem Destino",
+     "Longe"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t024-chitaozinho-xororo-planeta-azul",
+  "artista": "Chitãozinho & Xororó",
+  "estilo": "Sertanejo e música sertaneja romântica",
+  "album": "Planeta Azul",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Foge de Mim",
+     "Brincar de Ser Feliz",
+     "Peão de Rodeio",
+     "Foi Por Amor",
+     "Caipira",
+     "Seus Costumes"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Planeta Azul",
+     "A Minha Vida",
+     "Nossa História",
+     "Chico Mineiro (Participação especial de Tonico e Tinoco)",
+     "Falta Você em Mim",
+     "Perigosas Emoções"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t025-leandro-leonardo-volume-5",
+  "artista": "Leandro & Leonardo",
+  "estilo": "Sertanejo romântico e música sertaneja",
+  "album": "Volume 5",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Sonho por Sonho",
+     "Gostoso Sentimento",
+     "Não Aprendi a Dizer Adeus",
+     "Bate Coração",
+     "Sabor de Mim",
+     "Me Dê um Sinal"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Mensagem",
+     "Estou na Mão Desta Mulher",
+     "A Rotina (Fim de Semana)",
+     "Não Olhe Assim",
+     "Amores São Coisas da Vida",
+     "Paz na Cama"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t026-leandro-leonardo-volume-4",
+  "artista": "Leandro & Leonardo",
+  "estilo": "Sertanejo romântico",
+  "album": "Volume 4",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Cadê Você",
+     "Talvez Você Se Lembre",
+     "O Cheiro da Maçã",
+     "Coração Quer Te Encontrar",
+     "Mais Uma Vez Sozinho (Marcas de Amor)",
+     "Pra Nunca Dizer Adeus"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Pense em Mim",
+     "Só Fazendo Amor",
+     "Você Ainda Vai Voltar",
+     "Ponto Fraco",
+     "Desculpe, Mas Eu Vou Chorar",
+     "Talismã"
+    ]
+   }
+  ],
+  "valorPago": ""
+ },
+ {
+  "id": "t027-leandro-leonardo-volume-8",
+  "artista": "Leandro & Leonardo",
+  "estilo": "Sertanejo romântico",
+  "album": "Volume 8",
+  "foto": "",
+  "lados": [
+   {
+    "lado": "Lado A",
+    "musicas": [
+     "Mulher Brasileira",
+     "Não Sei Mais Dormir Sozinho",
+     "25 Horas Por Dia",
+     "Saudades Dela",
+     "Dor de Amor Não Tem Jeito",
+     "Índia"
+    ]
+   },
+   {
+    "lado": "Lado B",
+    "musicas": [
+     "Diga Pra Mim (Philosopher)",
+     "Casa Separa",
+     "Cavaleiro do Asfalto",
+     "Brigar Com Ele",
+     "Dodói de Amor",
+     "Separados",
+     "Achei Uma Louca"
+    ]
+   }
+  ],
+  "valorPago": ""
+ }
+]

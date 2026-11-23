@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meus Vinis</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main>
+    <h1>Coleção</h1>
+    <p class="sub">Os vinis que você tem e os que quer, juntos.</p>
+
+    <div class="barra">
+      <div class="abas" role="tablist">
+        <button data-aba="todos" class="ativo">Todos <span data-n="todos"></span></button>
+        <button data-aba="tenho">Tenho <span data-n="tenho"></span></button>
+        <button data-aba="quero">Quero <span data-n="quero"></span></button>
+      </div>
+      <input type="search" id="busca" placeholder="Buscar artista, álbum, música…">
+      <select id="genero"><option value="">Todos os gêneros</option></select>
+      <select id="ordem">
+        <option value="artista">Ordenar: artista</option>
+        <option value="album">Ordenar: álbum</option>
+        <option value="ano">Ordenar: lançamento</option>
+        <option value="preco">Ordenar: preço</option>
+        <option value="recente">Ordenar: cadastro recente</option>
+      </select>
+    </div>
+    <p class="resumo" id="resumo"></p>
+    <div class="grade" id="grade"><div class="vazio">Carregando…</div></div>
+  </main>
+
+  <dialog id="dlg"></dialog>
+  <script type="module" src="assets/colecao.js"></script>
+</body>
+</html>
