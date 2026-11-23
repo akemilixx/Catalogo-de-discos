@@ -321,7 +321,6 @@
   "artista": "Pink Floyd",
   "estilo": "Rock progressivo, rock psicodélico e art rock",
   "album": "The Dark Side of the Moon",
-  "foto": "",
   "lados": [
    {
     "lado": "Lado A",
@@ -344,7 +343,8 @@
     ]
    }
   ],
-  "valorPago": ""
+  "valorPago": 50,
+  "foto": "img/t-pink-floyd-the-dark-side-of-the-moon-mwsk7xs7.jpg"
  },
  {
   "id": "t011-elis-regina-fascinacao",
