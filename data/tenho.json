@@ -174,7 +174,6 @@
   "artista": "Gorillaz",
   "estilo": "Misto",
   "album": "Cracker Island",
-  "foto": "",
   "lados": [
    {
     "lado": "Lado A",
@@ -197,7 +196,8 @@
     ]
    }
   ],
-  "valorPago": ""
+  "valorPago": 256,
+  "foto": ""
  },
  {
   "id": "t007-mitski-be-the-cowboy",
