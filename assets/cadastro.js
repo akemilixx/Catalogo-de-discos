@@ -1,6 +1,6 @@
 // Lógica comum das páginas de cadastro (Quero e Tenho).
 import {
-  montarCabecalho, abrirConfig, carregar, salvar, temToken, esc, htmlCapa, urlImagem,
+  montarCabecalho, abrirLogin, carregar, salvar, temToken, esc, htmlCapa, urlImagem,
   reduzirImagem, enviarImagem, linkGoogleImagens, novoId, slug, normal, toast,
 } from './app.js';
 
@@ -24,9 +24,13 @@ export async function iniciarCadastro(op) {
   const hashInicial = location.hash;
 
   if (!temToken()) {
-    $('main').insertAdjacentHTML('afterbegin',
-      `<div class="aviso">Para salvar no GitHub, conecte seu token primeiro. <button type="button" id="ligar">Conectar</button></div>`);
-    $('#ligar').onclick = abrirConfig;
+    // Sem senha: esconde o formulário e pede para entrar.
+    $('.layout-cad').hidden = true;
+    $('main').insertAdjacentHTML('beforeend',
+      `<div class="vazio">Esta página é só para quem tem a senha. <button type="button" id="ligar" class="pri">Entrar</button></div>`);
+    $('#ligar').onclick = abrirLogin;
+    abrirLogin();
+    return new Promise(() => {});
   }
 
   /* ----- campo de imagem ----- */

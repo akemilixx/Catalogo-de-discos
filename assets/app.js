@@ -1,7 +1,7 @@
 // Funções compartilhadas: configuração, leitura/gravação no GitHub, imagens e UI.
 
 const CFG_KEY = 'vinis.config';
-const PADRAO = { owner: 'akemilixx', repo: 'Catalogo-de-discos', branch: '', token: '' };
+const PADRAO = { owner: 'akemilixx', repo: 'Catalogo-de-discos', branch: 'main', token: '' };
 
 export const ARQUIVOS = { quero: 'data/quero.json', tenho: 'data/tenho.json' };
 
@@ -80,7 +80,7 @@ export async function carregar(nome) {
  * Tenta de novo se alguém salvou ao mesmo tempo.
  */
 export async function salvar(nome, alterar, mensagem) {
-  if (!temToken()) throw new Error('Configure o token do GitHub (botão ⚙ GitHub) para salvar.');
+  if (!temToken()) throw new Error('Entre com a senha (botão Entrar) para salvar.');
   for (let tentativa = 0; tentativa < 3; tentativa++) {
     const { dados, sha } = await lerArquivoApi(ARQUIVOS[nome]);
     const nova = alterar(dados) || dados;
@@ -195,79 +195,181 @@ export function toast(msg, tipo = 'ok') {
   setTimeout(() => t.remove(), tipo === 'erro' ? 8000 : 4000);
 }
 
-/* ---------- Cabeçalho e configurações ---------- */
+/* ---------- Senha de acesso ---------- */
+// O token do GitHub fica em data/acesso.json criptografado (AES-GCM) com uma chave
+// derivada da senha (PBKDF2). Só quem sabe a senha consegue usar o token para salvar.
+const ACESSO = 'data/acesso.json';
+const ITER = 600000;
+const b64 = (u8) => bytesParaB64(u8);
+const deB64 = (t) => Uint8Array.from(atob(t), (c) => c.charCodeAt(0));
+
+async function chaveDaSenha(senha, sal, iter) {
+  const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(senha), 'PBKDF2', false, ['deriveKey']);
+  return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: sal, iterations: iter, hash: 'SHA-256' },
+    base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+}
+
+async function cifrar(texto, senha) {
+  const sal = crypto.getRandomValues(new Uint8Array(16));
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const k = await chaveDaSenha(senha, sal, ITER);
+  const dados = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, k, new TextEncoder().encode(texto)));
+  return { v: 1, iter: ITER, sal: b64(sal), iv: b64(iv), dados: b64(dados) };
+}
+
+async function decifrar(obj, senha) {
+  const k = await chaveDaSenha(senha, deB64(obj.sal), obj.iter);
+  const t = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: deB64(obj.iv) }, k, deB64(obj.dados));
+  return new TextDecoder().decode(t);
+}
+
+async function lerAcesso() {
+  const c = getConfig();
+  // Tenta o GitHub direto (sempre atualizado); se falhar, o arquivo publicado no site.
+  try {
+    const r = await fetch(`https://raw.githubusercontent.com/${c.owner}/${c.repo}/${c.branch || 'HEAD'}/${ACESSO}?t=${Date.now()}`, { cache: 'no-store' });
+    if (r.ok) return r.json();
+  } catch { /* tenta o próximo */ }
+  const r = await fetch(`${ACESSO}?t=${Date.now()}`, { cache: 'no-store' });
+  if (!r.ok) throw new Error('A senha ainda não foi definida. Peça para o dono do repositório configurar.');
+  return r.json();
+}
+
+async function testarToken(token) {
+  const c = getConfig();
+  const r = await fetch(`https://api.github.com/repos/${c.owner}/${c.repo}`, { headers: { Authorization: `Bearer ${token}` } });
+  const j = await r.json().catch(() => ({}));
+  if (r.status === 401) throw new Error('O token do GitHub expirou ou foi apagado. O dono precisa gerar outro e definir a senha de novo.');
+  if (!r.ok) throw new Error(j.message || `Erro ${r.status}`);
+  if (!j.permissions?.push) throw new Error('O token não tem permissão de escrita no repositório.');
+}
+
+export async function entrar(senha) {
+  const obj = await lerAcesso();
+  let token;
+  try { token = await decifrar(obj, senha); } catch { throw new Error('Senha incorreta.'); }
+  await testarToken(token);
+  setConfig({ ...getConfig(), token });
+}
+
+export function sair() {
+  setConfig({ ...getConfig(), token: '' });
+}
+
+async function definirSenha(token, senha) {
+  await testarToken(token);
+  setConfig({ ...getConfig(), token });
+  const obj = await cifrar(token, senha);
+  let sha;
+  try { sha = (await api(ACESSO)).sha; } catch (e) { if (e.status !== 404) throw e; }
+  await gravarArquivo(ACESSO, textoParaB64(JSON.stringify(obj, null, 1) + '\n'), 'Atualiza senha de acesso', sha);
+}
+
+/* ---------- Cabeçalho e diálogos ---------- */
 export function montarCabecalho(ativo) {
-  const links = [
-    ['index.html', 'Coleção', 'colecao'],
-    ['tenho.html', 'Cadastrar Tenho', 'tenho'],
-    ['quero.html', 'Cadastrar Quero', 'quero'],
-  ];
+  const logado = temToken();
+  const links = [['index.html', 'Coleção', 'colecao']];
+  if (logado) links.push(['tenho.html', 'Cadastrar Tenho', 'tenho'], ['quero.html', 'Cadastrar Quero', 'quero']);
   const h = document.createElement('header');
   h.className = 'topo';
   h.innerHTML = `
     <a class="marca" href="index.html"><span class="disco-mini"></span>Meus Vinis</a>
     <nav>${links.map(([href, txt, id]) => `<a href="${href}" class="${id === ativo ? 'ativo' : ''}">${txt}</a>`).join('')}</nav>
-    <button type="button" class="btn-config" title="Conexão com o GitHub">
-      <span class="status ${temToken() ? 'on' : ''}"></span>⚙ GitHub
-    </button>`;
+    <button type="button" class="btn-config">${logado ? '<span class="status on"></span>Sair' : 'Entrar'}</button>`;
   document.body.prepend(h);
-  h.querySelector('.btn-config').addEventListener('click', abrirConfig);
+  h.querySelector('.btn-config').addEventListener('click', () => {
+    if (logado) { if (confirm('Sair? Para cadastrar de novo será preciso digitar a senha.')) { sair(); location.href = 'index.html'; } }
+    else abrirLogin();
+  });
+}
+
+function dialogo(id, html) {
+  let d = document.getElementById(id);
+  if (!d) { d = document.createElement('dialog'); d.id = id; document.body.append(d); }
+  d.innerHTML = html;
+  d.onclick = (e) => { if (e.target === d) d.close(); };
+  d.showModal();
+  return d;
+}
+
+export function abrirLogin() {
+  const d = dialogo('dlg-login', `
+    <form class="form-config">
+      <h2>Entrar</h2>
+      <p class="ajuda">Digite a senha para cadastrar, editar e excluir discos.</p>
+      <label>Senha<input name="senha" type="password" autocomplete="current-password" required autofocus></label>
+      <p class="resultado"></p>
+      <div class="acoes">
+        <button type="button" class="sec" data-acao="config" style="margin-right:auto">Definir senha</button>
+        <button type="button" class="sec" data-acao="fechar">Cancelar</button>
+        <button class="pri">Entrar</button>
+      </div>
+    </form>`);
+  const f = d.querySelector('form');
+  f.querySelector('[data-acao=fechar]').onclick = () => d.close();
+  f.querySelector('[data-acao=config]').onclick = () => { d.close(); abrirConfig(); };
+  f.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const out = f.querySelector('.resultado');
+    const btn = f.querySelector('.pri');
+    btn.disabled = true; out.textContent = 'Verificando…';
+    try { await entrar(f.senha.value); location.reload(); }
+    catch (err) { out.textContent = `✖ ${err.message}`; btn.disabled = false; }
+  });
 }
 
 export function abrirConfig() {
   const c = getConfig();
-  let d = document.getElementById('dlg-config');
-  if (!d) {
-    d = document.createElement('dialog');
-    d.id = 'dlg-config';
-    document.body.append(d);
-  }
-  d.innerHTML = `
-    <form method="dialog" class="form-config">
-      <h2>Conexão com o GitHub</h2>
-      <p class="ajuda">Os vinis ficam salvos nos arquivos <code>data/*.json</code> e <code>img/</code> do repositório.
-        Para gravar, cole um <b>token de acesso</b> do GitHub. Ele fica guardado só neste navegador.</p>
+  const d = dialogo('dlg-config', `
+    <form class="form-config">
+      <h2>Definir senha de acesso</h2>
+      <p class="ajuda">Só para o dono do repositório no GitHub. O token é guardado no repositório
+        <b>criptografado com a senha</b>; quem souber a senha consegue cadastrar sem ter conta no GitHub.
+        Use uma senha forte (frase longa).</p>
       <details><summary>Como criar o token</summary>
         <ol>
           <li>Abra <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a>.</li>
-          <li>Em <i>Repository access</i>, escolha <b>Only select repositories</b> → <b>${esc(c.repo)}</b>.</li>
-          <li>Em <i>Permissions → Repository permissions → Contents</i>, escolha <b>Read and write</b>.</li>
+          <li><i>Expiration</i>: a validade que quiser (quando vencer, gere outro e defina a senha de novo).</li>
+          <li><i>Repository access</i>: <b>Only select repositories</b> → <b>${esc(c.repo)}</b>.</li>
+          <li><i>Repository permissions → Contents</i>: <b>Read and write</b>.</li>
           <li>Gere o token e cole abaixo.</li>
         </ol>
       </details>
-      <label>Token<input name="token" type="password" autocomplete="off" value="${esc(c.token)}" placeholder="github_pat_..."></label>
+      <label>Token do GitHub<input name="token" type="password" autocomplete="off" required placeholder="github_pat_..."></label>
       <div class="linha">
-        <label>Usuário/organização<input name="owner" value="${esc(c.owner)}" required></label>
-        <label>Repositório<input name="repo" value="${esc(c.repo)}" required></label>
+        <label>Senha<input name="senha" type="password" autocomplete="new-password" minlength="8" required></label>
+        <label>Repita a senha<input name="senha2" type="password" autocomplete="new-password" required></label>
       </div>
-      <label>Branch <small>(vazio = branch padrão do repositório)</small><input name="branch" value="${esc(c.branch)}" placeholder="main"></label>
+      <details><summary>Avançado</summary>
+        <div class="linha" style="margin-top:8px">
+          <label>Usuário/organização<input name="owner" value="${esc(c.owner)}" required></label>
+          <label>Repositório<input name="repo" value="${esc(c.repo)}" required></label>
+        </div>
+        <label style="margin-top:8px">Branch<input name="branch" value="${esc(c.branch)}"></label>
+      </details>
       <p class="resultado"></p>
       <div class="acoes">
-        <button type="button" class="sec" data-acao="sair">Remover token</button>
-        <button type="button" class="sec" data-acao="testar">Testar</button>
-        <button value="ok" class="pri">Salvar</button>
+        <button type="button" class="sec" data-acao="fechar">Cancelar</button>
+        <button class="pri">Salvar senha</button>
       </div>
-    </form>`;
+    </form>`);
   const f = d.querySelector('form');
-  const ler = () => Object.fromEntries(['token', 'owner', 'repo', 'branch'].map((k) => [k, f[k].value.trim()]));
-  f.addEventListener('submit', () => { setConfig(ler()); location.reload(); });
-  f.querySelector('[data-acao=sair]').onclick = () => { setConfig({ ...ler(), token: '' }); location.reload(); };
-  f.querySelector('[data-acao=testar]').onclick = async () => {
+  f.querySelector('[data-acao=fechar]').onclick = () => d.close();
+  f.addEventListener('submit', async (e) => {
+    e.preventDefault();
     const out = f.querySelector('.resultado');
+    if (f.senha.value !== f.senha2.value) { out.textContent = '✖ As senhas não conferem.'; return; }
+    const btn = f.querySelector('.pri');
+    btn.disabled = true; out.textContent = 'Salvando…';
     const antes = getConfig();
-    setConfig(ler());
-    out.textContent = 'Testando…';
+    setConfig({ ...antes, owner: f.owner.value.trim(), repo: f.repo.value.trim(), branch: f.branch.value.trim() });
     try {
-      const r = await fetch(`https://api.github.com/repos/${f.owner.value}/${f.repo.value}`, {
-        headers: f.token.value ? { Authorization: `Bearer ${f.token.value.trim()}` } : {},
-      });
-      const j = await r.json();
-      if (!r.ok) throw new Error(j.message);
-      const pode = j.permissions?.push;
-      out.textContent = pode ? `✔ Conectado a ${j.full_name} com permissão de escrita.` : `⚠ Repositório encontrado, mas sem permissão de escrita.`;
-    } catch (e) {
-      out.textContent = `✖ ${e.message}`;
-    } finally { setConfig(antes); }
-  };
-  d.showModal();
+      await definirSenha(f.token.value.trim(), f.senha.value);
+      out.textContent = '✔ Senha definida! Passe a senha para quem vai cadastrar.';
+      setTimeout(() => location.reload(), 1500);
+    } catch (err) {
+      setConfig(antes);
+      out.textContent = `✖ ${err.message}`; btn.disabled = false;
+    }
+  });
 }

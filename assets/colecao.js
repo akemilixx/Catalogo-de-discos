@@ -1,4 +1,4 @@
-import { montarCabecalho, carregar, esc, fmtPreco, fmtData, htmlCapa, chave, normal, toast } from './app.js';
+import { montarCabecalho, temToken, carregar, esc, fmtPreco, fmtData, htmlCapa, chave, normal, toast } from './app.js';
 
 montarCabecalho('colecao');
 
@@ -90,7 +90,7 @@ function abrir(x) {
         <h2 style="margin:8px 0 0">${esc(x.album)}</h2>
         <div class="sub" style="margin:0">${esc(x.artista)}</div>
         <dl>${campos}</dl>
-        <a href="${x.tipo}.html#editar=${encodeURIComponent(r.id)}">Editar este disco</a>
+        ${temToken() ? `<a href="${x.tipo}.html#editar=${encodeURIComponent(r.id)}">Editar este disco</a>` : ''}
       </div>
     </div>
     <div style="padding:0 20px 20px">${extra}</div></div>`;

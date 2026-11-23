@@ -21,16 +21,24 @@ Cada cadastro feito no site vira um commit nesses arquivos, pela API do GitHub.
 1. No GitHub: **Settings → Pages → Build and deployment → Deploy from a branch**, escolha a branch com estes arquivos e a pasta `/ (root)`.
 2. O site fica em `https://akemilixx.github.io/Catalogo-de-discos/`.
 
-## Como liberar a gravação (uma vez por navegador)
+## Senha para cadastrar (quem cadastra não precisa de conta no GitHub)
 
+Quem só visita vê a coleção. Para cadastrar, editar e excluir é preciso **Entrar** com a senha.
+
+**Dono do repositório (uma vez):**
 1. Crie um token em <https://github.com/settings/personal-access-tokens/new>:
    - *Repository access*: **Only select repositories** → `Catalogo-de-discos`
    - *Repository permissions → Contents*: **Read and write**
-2. No site, clique em **⚙ GitHub**, cole o token e salve. O token fica só no seu navegador.
-3. Se o Pages publicar de uma branch que não é a padrão, informe essa branch no mesmo diálogo.
+2. No site: **Entrar → Definir senha**, cole o token e escolha uma senha forte.
+   O token é salvo em `data/acesso.json` **criptografado com a senha** (AES-GCM + PBKDF2).
+3. Passe a senha para quem vai cadastrar.
+
+Para trocar a senha (ou quando o token vencer), repita o passo 2.
+
+**Quem cadastra:** abre o site, clica em **Entrar**, digita a senha. O navegador lembra até clicar em **Sair**.
 
 Depois de salvar, o site publicado leva cerca de 1 minuto para mostrar a mudança
-para quem não tem token; quem tem token já vê na hora.
+para quem está só visitando; quem entrou com a senha já vê na hora.
 
 ## Reimportar as planilhas
 

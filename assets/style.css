@@ -184,3 +184,4 @@ details summary { cursor: pointer; font-size: .9rem; color: var(--acento); }
 .toast { padding: 10px 14px; border-radius: 10px; background: #1f2937; color: #fff; box-shadow: var(--sombra); font-size: .92rem; }
 .toast.ok { background: #166534; }
 .toast.erro { background: #b91c1c; }
+[hidden] { display: none !important; }
