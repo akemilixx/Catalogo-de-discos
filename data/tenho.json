@@ -204,7 +204,6 @@
   "artista": "Mitski",
   "estilo": "Indie rock, art pop, indie pop",
   "album": "Be the Cowboy",
-  "foto": "",
   "lados": [
    {
     "lado": "Lado A",
@@ -231,7 +230,8 @@
     ]
    }
   ],
-  "valorPago": ""
+  "valorPago": 159.2,
+  "foto": "img/t-mitski-be-the-cowboy-mwsk1ru1.jpg"
  },
  {
   "id": "t008-shiro-sagisu-neon-genesis-evangelion-the-original-",
